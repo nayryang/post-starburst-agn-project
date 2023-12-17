@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Understanding BPTs &#8212; Correlating Post-Starburst Regions and AGN/SF Regions in Galaxies</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'bpt';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Combining our Post-Starburst Regions and the BPT Diagrams" href="combine.html" />
+    <link rel="prev" title="Identifying Post-Starburst Regions for a Galaxy" href="psb.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="Correlating Post-Starburst Regions and AGN/SF Regions in Galaxies - Home"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Correlating Post-Starburst Regions and AGN/SF Regions in Galaxies - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Post-Starburst vs AGN/SF Regions in Galaxies
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="background.html">What is a Post-Starburst Galaxy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marvin.html">Using SDSS-marvin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psb.html">Identifying Post-Starburst Regions for a Galaxy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Understanding BPTs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combine.html">Combining our Post-Starburst Regions and the BPT Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results!</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fbpt.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/bpt.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Understanding BPTs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-bpt">What is a BPT?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-bpts">Generating BPTs</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="understanding-bpts">
+<h1>Understanding BPTs<a class="headerlink" href="#understanding-bpts" title="Permalink to this heading">#</a></h1>
+<p>Now that we have covered the PSB side of our project, let’s discuss how we will identify Active Galactic Nucleis (AGNs). AGNs are more commonly known as black holes, and dominate the central regions of a galaxy when they exist. AGNs are commonly associated with suppressing star formation, so comparing regions with AGNs to our Post-Starburst regions should provide us with some insight into the correlation between the two.</p>
+<p>In order to analyze AGN regions, we will turn to the use of a BPT (Baldwin-Phillips-Terlevich) Diagram. These diagrams follow some similarities to our own PSB plots, and we can directly create them through marvin!</p>
+<section id="what-is-a-bpt">
+<h2>What is a BPT?<a class="headerlink" href="#what-is-a-bpt" title="Permalink to this heading">#</a></h2>
+<p>In short, BPT diagrams are a class of diagrams that measure the flux ratios of certain emission lines, in order to classify their dominant energy-source.</p>
+<p><img alt="" src="_images/bptref.gif" /></p>
+<p>In this particular BPT diagram, the flux ratio of the NII/Hα line is plotted against the OIII/Hβ ratio. Each dot represents either a galaxy, or a region, or an object that we observe our used spectrum from. As we can see in this diagram, a solid line is drawn between the objects marked with a hollow circle, and the rest. This line is the classification line that separates a galaxy dominated by Star-Formation and an AGN dominated one. Essentially, this line is determined by the upper limit of pure stellar photoionization models, which represents the theoretical maximum energy a galaxy could emit through star-formation processes. If a galaxy lies above this line, then we conclude that its energy source cannot be limited to stellar emissions, and therefore there likely exists significant AGN contribution.</p>
+<p>In the BPT diagrams generated by marvin, we will also have a few additional classifications in addition to Star-Forming and AGNs. These classifications come from <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2006MNRAS.372..961K/abstract">Kewley (2001)</a>, which further examines this diagram, divides the AGN-dominated regions, into Seyferts and LINERs, and a composite model.</p>
+<p>More specifically, we will use these 5 follow classifications:</p>
+<ul class="simple">
+<li><p>SF (Star Forming)</p></li>
+<li><p>Composite</p></li>
+<li><p>Seyfert</p></li>
+<li><p>LINER</p></li>
+<li><p>Ambiguous</p></li>
+</ul>
+<p><font size = "5"><strong>Composite, Seyfert, and LINERs</strong></font></p>
+<p><img alt="" src="_images/agb.jpg" /></p>
+<p>These three categories of galaxies would by themselves require a whole paper to explain, but let’s attempt a quick rundown!</p>
+<p>Seyfert and LINERs are both categories of AGNs, Seyfert being a high energy, high ionization type nuclei, and LINERs representing the opposite. Seyfert galaxies are high-brightness AGNs, along with quasars, that emit spectra with high-ionization emission lines, and contain a Supermassive Black Hole in its center. Unlike quasars however, their host galaxies are still detectable!</p>
+<p>LINERs on the other hand, are another category of AGNs that are defined by spectra lines from weakly-ionized, or neutral atoms, with much less energy than Seyferts. However, emissions from LINERs likely still have contributions from AGNs, and are unlikely to result from only Star-Forming activity.</p>
+<p>Composite galaxies, are galaxies that emit both Star-Forming traces and AGN activity. As such, they are located in an intermediate region between AGN and Star-Forming galaxies. While the other two categories have emissions dominated by their respective energy sources, composite galaxies see a mix in contributions from both AGN and Star-forming.</p>
+<p>If you want to learn more about these respective galaxies, here are some papers for additional context!</p>
+<p><a class="reference external" href="https://ui.adsabs.harvard.edu/abs/1980A%26A....87..152H/abstract">Heckman (1980)</a>
+<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2006MNRAS.372..961K/abstract">Kewley (2001)</a>
+<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2016MNRAS.461.3111B/abstract">Belfiore (2016)</a>
+<a class="reference external" href="https://arxiv.org/abs/astro-ph/0506109">Panessa (2005)</a></p>
+<p>Now that we understand what they are, let’s examine how to generate these BPTs with Marvin!</p>
+</section>
+<section id="generating-bpts">
+<h2>Generating BPTs<a class="headerlink" href="#generating-bpts" title="Permalink to this heading">#</a></h2>
+<p>Just like how we extracted the emission spectras, we will once again need the Map of our desired galaxy. Let’s choose a different galaxy this time, one that shows AGN-dominant activity!</p>
+<p>After we retrieve the Map for our galaxy once again, we now instead call the get_bpt() function on the map. This function returns 3 items, and also automatically plots the BPT diagrams for us. fig, axes are both used to modify the plots, but we are most interested in the BPT masks. These masks are identically structured to our PSB masks, each value representing a True/False that indicated whether its assigned attribute its true. For example: masks[‘sf’] will return a 2D array, whose values indicate whether a spaxel is star-forming dominated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">marvin</span> <span class="kn">import</span> <span class="n">config</span>
+<span class="kn">import</span> <span class="nn">marvin</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">marvin.tools</span> <span class="kn">import</span> <span class="n">Maps</span>
+<span class="n">maps</span> <span class="o">=</span> <span class="n">Maps</span><span class="p">(</span><span class="s1">&#39;9494-3701&#39;</span><span class="p">)</span>
+<span class="n">masks</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">maps</span><span class="o">.</span><span class="n">get_bpt</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Yellow">[WARNING]: </span>cannot initiate Sentry error reporting: [Errno 25] Inappropriate ioctl for device. <span class=" -Color -Color-Cyan">(UserWarning)</span>
+<span class=" -Color -Color-Blue">[INFO]: </span>No release version set. Setting default to DR17
+<span class=" -Color -Color-Bold -Color-Bold-Yellow">[WARNING]: </span>path /home/neap/sas/dr17/manga/spectro/analysis/v3_1_1/3.1.0/dapall-v3_1_1-3.1.0.fits cannot be found. Setting dapall to None. <span class=" -Color -Color-Cyan">(MarvinUserWarning)</span>
+</pre></div>
+</div>
+<img alt="_images/57e6d2bcbbb2bde869fdc8872e7e5a7f5a9900411d20d5b4c7138e50e295542f.png" src="_images/57e6d2bcbbb2bde869fdc8872e7e5a7f5a9900411d20d5b4c7138e50e295542f.png" />
+</div>
+</div>
+<p>Now that we have generated our BPT plots and masks, it’s time to combine our Post-Starburst analysis with AGN regions!</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="psb.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Identifying Post-Starburst Regions for a Galaxy</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="combine.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Combining our Post-Starburst Regions and the BPT Diagrams</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-bpt">What is a BPT?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-bpts">Generating BPTs</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ryan Yang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

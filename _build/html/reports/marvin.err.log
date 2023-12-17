@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "/home/neap/miniconda3/envs/marvin/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/neap/miniconda3/envs/marvin/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/neap/miniconda3/envs/marvin/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+  File "/home/neap/miniconda3/envs/marvin/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/neap/miniconda3/envs/marvin/lib/python3.8/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/neap/miniconda3/envs/marvin/lib/python3.8/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/neap/miniconda3/envs/marvin/lib/python3.8/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+h_alpha_gew = galaxy_map.emline_gew_ha_6564
+lick_h_delta = galaxy.specindex_hdeltaagalaxy
+h_alpha_gew
+lick_h_delta
+------------------
+
+----- stderr -----
+[0;31m[ERROR]: [0mTraceback (most recent call last):
+  File [36m"/home/neap/miniconda3/envs/marvin/lib/python3.8/site-packages/IPython/core/interactiveshell.py"[39;49;00m, line [34m3505[39;49;00m, in run_code[37m[39;49;00m
+[37m    [39;49;00mexec(code_obj, [36mself[39;49;00m.user_global_ns, [36mself[39;49;00m.user_ns)[37m[39;49;00m
+  File [36m"/tmp/ipykernel_9650/1386552548.py"[39;49;00m, line [34m2[39;49;00m, in <module>[37m[39;49;00m
+[37m    [39;49;00mlick_h_delta = galaxy.specindex_hdeltaagalaxy[37m[39;49;00m
+[91mNameError[39;49;00m: name 'galaxy' is not defined[37m[39;49;00m
+------------------
+
+
+
